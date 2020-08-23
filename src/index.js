@@ -1,17 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as Enums from './enums';
+import * as WeatherClient from './mockAPICall';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+
+
+class WeatherApp extends React.Component {
+  constructor(props){
+      super(props);
+      this.state = {
+        todaysCondition : WeatherClient.getTodaysCondition('aaa'),
+      };
+  }
+
+  render() {
+    let backgroundImg;
+    switch(this.state.todaysCondition) {
+      case Enums.skyCondition.SUNNY:
+        backgroundImg = '../assets/backgrounds/SunnyBackground.jpg';
+      break;
+      case Enums.skyCondition.PATRIALCLOUDY:
+      case Enums.skyCondition.CLOUDY:
+        backgroundImg = '../assets/backgrounds/CloudyBackground.jpg';
+      break;
+      case Enums.skyCondition.FOGGY:
+        backgroundImg = '../assets/backgrounds/FoggyBackground.jpg';
+      break;
+      case Enums.skyCondition.SUNNYLIGHTRAIN:
+      case Enums.skyCondition.CLOUDYLIGHTRAIN:
+      case Enums.skyCondition.LIGHTRAIN:
+        backgroundImg = '../assets/backgrounds/RainyBackground.jpeg';
+      break;
+      default:
+        backgroundImg = '../assets/backgrounds/ThunderstormBackground.jpg';
+      break;
+    }
+
+    var backgroundStyle = {
+      backgroundImage: `url(${backgroundImg})`
+    };
+
+    return (
+      <div class ='background' style={backgroundStyle}>
+        <div >hello</div>
+      </div>
+
+    );
+  }
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <WeatherApp />,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
