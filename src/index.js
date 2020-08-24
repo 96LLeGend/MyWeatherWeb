@@ -42,9 +42,8 @@ class WeatherApp extends React.Component {
 
     return (
       <div class ='background' style={backgroundStyle}>
-        <div >hello</div>
+        <div class ='panel'>hello</div>
       </div>
-
     );
   }
 }

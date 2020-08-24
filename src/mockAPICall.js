@@ -17,5 +17,5 @@ export function getTodaysWeather(city) {
 }
 
 export function getTodaysCondition(city) {
-  return Enums.skyCondition.FOGGY;
+  return Enums.skyCondition.SUNNY;
 }
