@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import TodaysCard from './today/todaysCard';
 import * as Enums from './enums';
 import * as WeatherClient from './mockAPICall';
+import * as Helper from './helper';
 import './index.css';
 
 
@@ -14,35 +16,15 @@ class WeatherApp extends React.Component {
   }
 
   render() {
-    let backgroundImg;
-    switch(this.state.todaysCondition) {
-      case Enums.skyCondition.SUNNY:
-        backgroundImg = '../assets/backgrounds/SunnyBackground.jpg';
-      break;
-      case Enums.skyCondition.PATRIALCLOUDY:
-      case Enums.skyCondition.CLOUDY:
-        backgroundImg = '../assets/backgrounds/CloudyBackground.jpg';
-      break;
-      case Enums.skyCondition.FOGGY:
-        backgroundImg = '../assets/backgrounds/FoggyBackground.jpg';
-      break;
-      case Enums.skyCondition.SUNNYLIGHTRAIN:
-      case Enums.skyCondition.CLOUDYLIGHTRAIN:
-      case Enums.skyCondition.LIGHTRAIN:
-        backgroundImg = '../assets/backgrounds/RainyBackground.jpeg';
-      break;
-      default:
-        backgroundImg = '../assets/backgrounds/ThunderstormBackground.jpg';
-      break;
-    }
-
-    var backgroundStyle = {
-      backgroundImage: `url(${backgroundImg})`
-    };
+    var background = {
+      backgroundImage: `url(${Helper.getBackgroundImageBySkyCondition(this.state.todaysCondition)})`
+    } ;
 
     return (
-      <div class ='background' style={backgroundStyle}>
-        <div class ='panel'>hello</div>
+      <div class ='background' style={background}>
+        <div class ='panel'>
+          <TodaysCard />
+        </div>
       </div>
     );
   }

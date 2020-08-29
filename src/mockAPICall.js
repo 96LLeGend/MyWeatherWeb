@@ -2,7 +2,7 @@ import * as Enums from './enums';
 
 export function getTodaysWeather(city) {
   var weather = {
-    localTime : new Date(),
+    updateTime : new Date(),
     windDegree : 202,
     windSpeed : 22,
     visibility : 10,
