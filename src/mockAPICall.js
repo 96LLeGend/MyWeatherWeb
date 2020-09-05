@@ -6,7 +6,7 @@ export function getTodaysWeather(city) {
     windDegree : 202,
     windSpeed : 22,
     visibility : 10,
-    condition : Enums.skyCondition.SUNNY,
+    condition : Enums.skyCondition.CLEAR,
     temperature : 15,
     dewPoint : 13,
     qnh : 1007,
@@ -17,5 +17,5 @@ export function getTodaysWeather(city) {
 }
 
 export function getTodaysCondition(city) {
-  return Enums.skyCondition.SUNNY;
+  return Enums.skyCondition.CLEAR;
 }

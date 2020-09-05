@@ -1,12 +1,12 @@
 export const skyCondition = Object.freeze({
-    SUNNY : 'Sunny',
-    PATRIALCLOUDY : 'PatrialCloudy',
-    CLOUDY : 'Cloudy',
-    FOGGY : 'Foggy',
-    SUNNYLIGHTRAIN : 'SunnyLightRain',
-    CLOUDYLIGHTRAIN : 'CloudyLightRain',
-    LIGHTRAIN : 'LightRain',
+    CLEAR : 'Clear',
+    PATRIALCLOUDY : 'Patrial Cloudy',
+    CLOUD : 'Cloud',
+    FOG : 'Fog',
+    CLEARSHOWER : 'Clear turn shower',
+    SHOWER : 'Shower',
     THUNDERSTORM : 'Thunderstorm',
+    SNOW : 'Snow'
   });
 
 export const windDirection = Object.freeze({

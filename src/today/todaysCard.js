@@ -15,13 +15,18 @@ class todaysCard extends React.Component {
   render() {
     return (
       <div class ='card'>
-        <div>{this.state.city}</div>
+        <div class = 'cityName'>{this.state.city}</div>
+      <div class = 'mainInfoSection'>
+          <div class = 'conditionIcon'></div>
+          <div class = 'temperatureNumber'>{this.state.weatherInfo.temperature}</div>
+          <div  class = 'degreeSymbol'>{'\u00b0'}</div>
+          <div class = 'temperatureUnit'>{'C'}</div>
+        </div>
         <div>{Helper.formatDateTime(this.state.weatherInfo.updateTime)}</div>
         <div>{this.state.weatherInfo.windDegree}</div>
         <div>{this.state.weatherInfo.windSpeed}</div>
         <div>{this.state.weatherInfo.visibility}</div>
         <div>{this.state.weatherInfo.condition}</div>
-        <div>{this.state.weatherInfo.temperature}</div>
         <div>{this.state.weatherInfo.dewPoint}</div>
         <div>{this.state.weatherInfo.qnh}</div>
         <div>{this.state.weatherInfo.feelLike}</div>

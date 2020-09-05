@@ -1,3 +1,31 @@
 .card {
   text-align: center;
+  font-family: Calibri;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.cityName {
+  font-size: 25px;
+  padding: 20px 0px 0px 0px;
+}
+
+/*Temperature*/
+.mainInfoSection{
+  margin-top: -10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.temperatureNumber {
+  font-size: 85px;
+}
+
+.degreeSymbol {
+  margin-top: -15px;
+  font-size: 60px;
+}
+
+.temperatureUnit {
+  font-size: 50px;
 }
