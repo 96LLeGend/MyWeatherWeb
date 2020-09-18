@@ -29,3 +29,8 @@
 .temperatureUnit {
   font-size: 50px;
 }
+
+.conditionIcon {
+  margin-left: -10px;
+  margin-top: 10px;
+}

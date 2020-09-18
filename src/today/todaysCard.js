@@ -16,8 +16,12 @@ class todaysCard extends React.Component {
     return (
       <div class ='card'>
         <div class = 'cityName'>{this.state.city}</div>
-      <div class = 'mainInfoSection'>
-          <div class = 'conditionIcon'></div>
+        <div class = 'mainInfoSection'>
+          <div class = 'conditionIcon'>
+            <svg height="65" width = "65" viewBox="0 0 30 30">
+              <path d={Helper.getConditionIcon(this.state.weatherInfo.condition)}/>
+            </svg>
+          </div>
           <div class = 'temperatureNumber'>{this.state.weatherInfo.temperature}</div>
           <div  class = 'degreeSymbol'>{'\u00b0'}</div>
           <div class = 'temperatureUnit'>{'C'}</div>

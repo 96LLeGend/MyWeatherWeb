@@ -1,4 +1,5 @@
 import * as Enums from './enums';
+import * as SVG from './svgProvider'
 
 export function getBackgroundImageBySkyCondition(condition) {
   let backgroundImg;
@@ -33,46 +34,36 @@ export function formatDateTime(dateTime) {
 }
 
 export function getConditionIcon(condition) {
-  let icon;
   const currentTime = new Date().getHours();
   const isDayTime = currentTime > 6 && currentTime < 20;
   switch(condition) {
     case Enums.skyCondition.CLEAR:
       if(isDayTime){
-        icon = '../assets/icons/skyCondition/wi-day-sunny.svg';
+        return SVG.daySunny;
       } else{
-        icon = '../assets/icons/skyCondition/wi-night-clear.svg';
+        return SVG.nightClear;
       }
-      break;
     case Enums.skyCondition.PATRIALCLOUDY:
       if(isDayTime){
-        icon = '../assets/icons/skyCondition/wi-day-cloudy.svg';
+        return SVG.dayCloudy;
       } else{
-        icon = '../assets/icons/skyCondition/wi-night-alt-cloudy.svg';
+        return SVG.nightCloudy;
       }
-      break;
     case Enums.skyCondition.CLOUD:
-      icon = '../assets/icons/skyCondition/wi-cloudy.svg';
-      break;
+      return SVG.cloudy;
     case Enums.skyCondition.FOGG:
-      icon = '../assets/icons/skyCondition/wi-fog.svg';
-      break;
+      return SVG.fog;
     case Enums.skyCondition.CLEARSHOWER:
       if(isDayTime){
-        icon = '../assets/icons/skyCondition/wi-day-showers.svg';
+        return SVG.dayShowers;
       } else{
-        icon = '../assets/icons/skyCondition/wi-night-alt-rain-mix.svg';
+        return SVG.nightShowers;
       }
-      break;
     case Enums.skyCondition.SHOWER:
-      icon = '../assets/icons/skyCondition/wi-rain-mix.svg';
-      break;
+      return SVG.rain;
     case Enums.skyCondition.THUNDERSTORM:
-      icon = '../assets/icons/skyCondition/wi-thunderstorm.svg';
-      break;
+      return SVG.thunderstorm;
     default:
-      icon = '../assets/icons/skyCondition/wi-snow.svg';
-      break;
+      return SVG.snow;
   }
-  return icon;
 }
