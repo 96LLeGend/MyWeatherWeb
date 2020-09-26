@@ -1,10 +1,10 @@
 export const skyCondition = Object.freeze({
-    CLEAR : 'Clear',
-    PATRIALCLOUDY : 'Patrial Cloudy',
+    CLEAR : 'Sunny',
+    PARTIALCLOUDY : 'Mostly Sunny',
     CLOUD : 'Cloud',
     FOG : 'Fog',
-    CLEARSHOWER : 'Clear turn shower',
-    SHOWER : 'Shower',
+    CLEARSHOWER : 'Clear turn light rain',
+    SHOWER : 'Rain',
     THUNDERSTORM : 'Thunderstorm',
     SNOW : 'Snow'
   });

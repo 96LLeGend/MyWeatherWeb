@@ -34,3 +34,21 @@
   margin-left: -10px;
   margin-top: 10px;
 }
+
+.conditionLabel {
+  font-size: 25px;
+  margin: -20px 0px 0px 0px;
+}
+
+.updateTime {
+  font-size: 14px;
+  font-weight: bolder;
+  margin-top: 7px;
+  padding-bottom: 5px;
+}
+
+.extraInfo{
+  font-size: 14px;
+  margin: 5px 5px 5px 5px;
+  align-items: center;
+}

@@ -3,7 +3,7 @@ import * as Enums from './enums';
 export function getTodaysWeather(city) {
   var weather = {
     updateTime : new Date(),
-    windDegree : 202,
+    windDegree : 92,
     windSpeed : 22,
     visibility : 10,
     condition : Enums.skyCondition.CLEAR,

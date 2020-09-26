@@ -7,7 +7,7 @@ export function getBackgroundImageBySkyCondition(condition) {
     case Enums.skyCondition.CLEAR:
       backgroundImg = '../assets/backgrounds/SunnyBackground.jpg';
       break;
-    case Enums.skyCondition.PATRIALCLOUDY:
+    case Enums.skyCondition.PARTIALCLOUDY:
     case Enums.skyCondition.CLOUD:
       backgroundImg = '../assets/backgrounds/CloudyBackground.jpg';
       break;
@@ -29,8 +29,7 @@ export function getBackgroundImageBySkyCondition(condition) {
 }
 
 export function formatDateTime(dateTime) {
-  return dateTime.getHours() + ':' + dateTime.getMinutes() + ' ' +
-  dateTime.getDate() + '/' + dateTime.getMonth() + '/' + dateTime.getFullYear();
+  return dateTime.getHours() + ':' + dateTime.getMinutes();
 }
 
 export function getConditionIcon(condition) {
@@ -43,7 +42,7 @@ export function getConditionIcon(condition) {
       } else{
         return SVG.nightClear;
       }
-    case Enums.skyCondition.PATRIALCLOUDY:
+    case Enums.skyCondition.PARTIALCLOUDY:
       if(isDayTime){
         return SVG.dayCloudy;
       } else{

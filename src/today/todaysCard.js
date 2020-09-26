@@ -13,6 +13,14 @@ class todaysCard extends React.Component {
   }
 
   render() {
+    const windDirectionIconStyle = {
+      display: "inline-block",
+      width: 15,
+      height: 15,
+      background: "url(../assets/icons/wi-wind-deg.svg)",
+      transform: 'rotate('+this.state.weatherInfo.windDegree+'deg)',
+    };
+
     return (
       <div class ='card'>
         <div class = 'cityName'>{this.state.city}</div>
@@ -26,15 +34,21 @@ class todaysCard extends React.Component {
           <div  class = 'degreeSymbol'>{'\u00b0'}</div>
           <div class = 'temperatureUnit'>{'C'}</div>
         </div>
-        <div>{Helper.formatDateTime(this.state.weatherInfo.updateTime)}</div>
-        <div>{this.state.weatherInfo.windDegree}</div>
-        <div>{this.state.weatherInfo.windSpeed}</div>
-        <div>{this.state.weatherInfo.visibility}</div>
-        <div>{this.state.weatherInfo.condition}</div>
-        <div>{this.state.weatherInfo.dewPoint}</div>
-        <div>{this.state.weatherInfo.qnh}</div>
-        <div>{this.state.weatherInfo.feelLike}</div>
-        <div>{this.state.weatherInfo.humidity}</div>
+        <div class = 'conditionLabel'>{this.state.weatherInfo.condition}</div>
+        <div class = 'updateTime'>Updated as of {Helper.formatDateTime(this.state.weatherInfo.updateTime)}</div>
+        <div>
+          <div class = 'extraInfo'>
+            <span>Feels Like {this.state.weatherInfo.feelLike}{'\u00b0'}</span>
+            <span>Wind <span style={windDirectionIconStyle}/> {this.state.weatherInfo.windSpeed} km/h </span>
+            <span>Visibility {this.state.weatherInfo.visibility} km</span>
+          </div>
+          <div class = 'extraInfo'>
+            <span>Barometer {this.state.weatherInfo.qnh} mb</span>
+            <span>Humidity {(this.state.weatherInfo.humidity)*100}%</span>
+            <span>Dew Point {this.state.weatherInfo.dewPoint}{'\u00b0'}</span>
+          </div>
+        </div>
+
       </div>
     );
   }
