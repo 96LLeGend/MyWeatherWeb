@@ -50,5 +50,16 @@
 .extraInfo{
   font-size: 14px;
   margin: 5px 5px 5px 5px;
-  align-items: center;
+}
+
+.extraInfo span{
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+
+.windDirectionIconContainer{
+  display:inline-block;
+  width: 15px;
+  height: 12px;
 }

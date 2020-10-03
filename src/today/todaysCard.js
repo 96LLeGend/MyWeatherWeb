@@ -14,7 +14,6 @@ class todaysCard extends React.Component {
 
   render() {
     const windDirectionIconStyle = {
-      display: "inline-block",
       width: 15,
       height: 15,
       background: "url(../assets/icons/wi-wind-deg.svg)",
@@ -39,7 +38,7 @@ class todaysCard extends React.Component {
         <div>
           <div class = 'extraInfo'>
             <span>Feels Like {this.state.weatherInfo.feelLike}{'\u00b0'}</span>
-            <span>Wind <span style={windDirectionIconStyle}/> {this.state.weatherInfo.windSpeed} km/h </span>
+          <span>Wind <div class = 'windDirectionIconContainer'><div style={windDirectionIconStyle}/></div> {this.state.weatherInfo.windSpeed} km/h </span>
             <span>Visibility {this.state.weatherInfo.visibility} km</span>
           </div>
           <div class = 'extraInfo'>
