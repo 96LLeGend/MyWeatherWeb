@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TodaysCard from './today/todaysCard';
+import Slider from './multipleDays/daysSlider';
 import * as Enums from './enums';
 import * as WeatherClient from './mockAPICall';
 import * as Helper from './helper';
@@ -24,6 +25,8 @@ class WeatherApp extends React.Component {
       <div class ='background' style={background}>
         <div class ='panel'>
           <TodaysCard />
+          <h1 class = 'dailyHourlyTitle'>Daily</h1>
+          <Slider />
         </div>
       </div>
     );

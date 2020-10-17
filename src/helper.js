@@ -32,6 +32,11 @@ export function formatDateTime(dateTime) {
   return dateTime.getHours() + ':' + dateTime.getMinutes();
 }
 
+export function convertDayFromNumberToWord(day) {
+  const dayStr = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  return dayStr[day];
+}
+
 export function getConditionIcon(condition) {
   const currentTime = new Date().getHours();
   const isDayTime = currentTime > 6 && currentTime < 20;

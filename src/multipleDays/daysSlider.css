@@ -1,0 +1,24 @@
+.sliderCardGridContainer{
+  margin-left: 5px;
+  display: inline-grid;
+  grid-template-rows: auto auto auto auto;
+  grid-row-gap: 5px;
+}
+
+.sliderCard {
+  font-family: Calibri;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 110px;
+  height: 130px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: left;
+  display: inline-block;
+  padding: 10px;
+}
+
+.slider{
+  text-align: center;
+}

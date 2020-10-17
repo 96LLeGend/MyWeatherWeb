@@ -3,7 +3,7 @@ import * as WeatherClient from '../mockAPICall';
 import * as Helper from '../helper';
 import './today.css';
 
-class todaysCard extends React.Component {
+class TodaysCard extends React.Component {
   constructor(props){
       super(props);
       this.state = {
@@ -30,7 +30,7 @@ class todaysCard extends React.Component {
             </svg>
           </div>
           <div class = 'temperatureNumber'>{this.state.weatherInfo.temperature}</div>
-          <div  class = 'degreeSymbol'>{'\u00b0'}</div>
+          <div class = 'degreeSymbol'>{'\u00b0'}</div>
           <div class = 'temperatureUnit'>{'C'}</div>
         </div>
         <div class = 'conditionLabel'>{this.state.weatherInfo.condition}</div>
@@ -53,4 +53,4 @@ class todaysCard extends React.Component {
   }
 }
 
-export default todaysCard;
+export default TodaysCard;

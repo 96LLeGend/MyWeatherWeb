@@ -1,9 +1,9 @@
 export const skyCondition = Object.freeze({
     CLEAR : 'Sunny',
     PARTIALCLOUDY : 'Mostly Sunny',
-    CLOUD : 'Cloud',
+    CLOUD : 'Cloudy',
     FOG : 'Fog',
-    CLEARSHOWER : 'Clear turn light rain',
+    CLEARSHOWER : 'Partial light rain',
     SHOWER : 'Rain',
     THUNDERSTORM : 'Thunderstorm',
     SNOW : 'Snow'

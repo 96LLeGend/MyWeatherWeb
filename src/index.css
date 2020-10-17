@@ -32,3 +32,11 @@ body {
     width : 100vw;
   }
 }
+
+.dailyHourlyTitle {
+  font-Family: Calibri;
+  font-Weight: lighter;
+  font-Size: 30px;
+  margin-top: 10px;
+  margin-left: 35px;
+}
