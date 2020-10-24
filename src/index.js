@@ -27,6 +27,7 @@ class WeatherApp extends React.Component {
           <TodaysCard />
           <h1 class = 'dailyHourlyTitle'>Daily</h1>
           <Slider />
+          <h1 class = 'dailyHourlyTitle'>Hourly</h1>
         </div>
       </div>
     );

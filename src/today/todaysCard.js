@@ -47,7 +47,6 @@ class TodaysCard extends React.Component {
             <span>Dew Point {this.state.weatherInfo.dewPoint}{'\u00b0'}</span>
           </div>
         </div>
-
       </div>
     );
   }

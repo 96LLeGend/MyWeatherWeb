@@ -8,8 +8,9 @@ Should display today's weather, 7 days, and should expand and display hourly wea
 - Phase 1: Display Today's weather, with icon and matching background(Sunny, Cloudy, Foggy, Rainy, Thunderstorm) -DONE
 - Phase 2: Display multiple days weather, with left-right slide and button
 - Phase 3: Display hourly weather
-- Phase 4: Switch between Celsius and Fahrenheit
-- Phase 5: Use API to poll real weather  (Advance)
-- Phase 6: City search? (Advance)
+- Phase 4: Responsive design
+- Phase 5: Switch between Celsius and Fahrenheit
+- Phase 6: Use API to poll real weather  (Advance)
+- Phase 7: City search? (Advance)
 
 Special thanks to @erikflowers for the weather icons: https://erikflowers.github.io/weather-icons/
