@@ -4,27 +4,50 @@ import * as Helper from '../helper';
 import './daysSlider.css';
 
 class DayCard extends React.Component {
+    constructor(props) {
+  	super(props)
+  	this.state = {
+  		isHover: false,
+  	}
+    this.toggleHover = this.toggleHover.bind(this);
+  }
+
+  toggleHover(){
+    this.setState({isHover : !this.state.isHover});
+    // console.log('toggle');
+  }
 
   addTriangle() {
-    //console.log('triangle');
     if(this.props.isSelected){
-        return <div class="triangle-down"/>;
+      if(this.state.isHover){
+        return  <div class = 'triangle-down' style = {{borderTopColor : 'rgba(192, 192, 192, 0.9)'}}/>;
+      }
+      return  <div class = 'triangle-down'/>;
     }
-    return <div />
+    return <div />;
   }
 
   changeBackGroundColour(){
-    console.log('background');
+    //console.log('background');
+    let background;
+    let border;
     if(this.props.isSelected){
-        return {backgroundColor : 'rgba(255, 255, 255, 0.9)',};
+      background =  'rgba(255, 255, 255, 0.9)';
+    } else {
+      background = 'rgba(255, 255, 255, 0)';
     }
-    return {backgroundColor : 'rgba(255, 255, 255, 0)',};
+    if(this.state.isHover){
+      border = 'silver';
+    }else{
+      border = 'transparent';
+    }
+    return {backgroundColor : background, borderColor : border};
   }
 
   render() {
     const weather = this.props.weather;
     return (
-      <div>
+      <div onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
         <div class = 'sliderCard' style = {this.changeBackGroundColour()}>
           <div class ='sliderCardGridContainer'>
             <div style = {{fontSize : 20,}}>{Helper.convertDayFromNumberToWord(weather.datetime.getDay())} {weather.datetime.getDate()}</div>
@@ -47,12 +70,12 @@ class Slider extends React.Component {
       this.state = {
         city : 'Auckland',
         weathers : WeatherClient.getWeeklyWeather(this.city),
-        SelectedIndex : 0,
+        selectedIndex : 0,
       };
   }
 
   handleSelect(i){
-    this.setState({SelectedIndex : i});
+    this.setState({selectedIndex : i});
     //console.log('Selected ' + this.state.SelectedIndex);
   }
 
@@ -60,25 +83,25 @@ class Slider extends React.Component {
     return (
       <div class = 'slider'>
         <div class = 'sliderCardContainer' onClick = {() => this.handleSelect(0)}>
-          <DayCard weather = {this.state.weathers[0]} isSelected = {this.state.SelectedIndex === 0}/>
+          <DayCard weather = {this.state.weathers[0]} isSelected = {this.state.selectedIndex === 0}/>
         </div>
         <div class = 'sliderCardContainer' onClick = {() => this.handleSelect(1)}>
-          <DayCard weather = {this.state.weathers[1]} isSelected = {this.state.SelectedIndex === 1}/>
+          <DayCard weather = {this.state.weathers[1]} isSelected = {this.state.selectedIndex === 1}/>
         </div>
         <div class = 'sliderCardContainer' onClick = {() => this.handleSelect(2)}>
-          <DayCard weather = {this.state.weathers[2]} isSelected = {this.state.SelectedIndex === 2}/>
+          <DayCard weather = {this.state.weathers[2]} isSelected = {this.state.selectedIndex === 2}/>
         </div>
         <div class = 'sliderCardContainer' onClick = {() => this.handleSelect(3)}>
-          <DayCard weather = {this.state.weathers[3]} isSelected = {this.state.SelectedIndex === 3}/>
+          <DayCard weather = {this.state.weathers[3]} isSelected = {this.state.selectedIndex === 3}/>
         </div>
         <div class = 'sliderCardContainer' onClick = {() => this.handleSelect(4)}>
-          <DayCard weather = {this.state.weathers[4]} isSelected = {this.state.SelectedIndex === 4}/>
+          <DayCard weather = {this.state.weathers[4]} isSelected = {this.state.selectedIndex === 4}/>
         </div>
         <div class = 'sliderCardContainer' onClick = {() => this.handleSelect(5)}>
-          <DayCard weather = {this.state.weathers[5]} isSelected = {this.state.SelectedIndex === 5}/>
+          <DayCard weather = {this.state.weathers[5]} isSelected = {this.state.selectedIndex === 5}/>
         </div>
         <div class = 'sliderCardContainer' onClick = {() => this.handleSelect(6)}>
-          <DayCard weather = {this.state.weathers[6]} isSelected = {this.state.SelectedIndex === 6}/>
+          <DayCard weather = {this.state.weathers[6]} isSelected = {this.state.selectedIndex === 6}/>
         </div>
       </div>
     );
